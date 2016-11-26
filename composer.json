@@ -1,12 +1,11 @@
 {
       "name": "laocc/yaf_example",
       "description": "yaf plugs演示程序",
-      "version": "v1.0.1",
       "require": {
-            "php": ">7.0.0",
+            "php": ">7.0",
             "ext-yaf": ">3.0",
-            "laocc/yaf": ">v1.0.0",
-            "laocc/dbs": "dev-master",
+            "laocc/yaf": ">1.0.1",
+            "laocc/dbs": ">1.0.1",
             "smarty/smarty": "~3.1"
       },
       "authors": [

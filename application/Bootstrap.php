@@ -18,10 +18,8 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract
     {
         $conf = new Ini(_ROOT . 'config/plugs.ini');
 
-        if (!\Yaf\Loader::import(_ROOT . '/../vendor/autoload.php')) {
-            if (!\Yaf\Loader::import(_ROOT . '/../kernel/autoload.php')) {
-                exit('本程序依赖composer加载，请先运行[composer install]');
-            }
+        if (!\Yaf\Loader::import(_ROOT . 'vendor/autoload.php')) {
+            exit('本程序依赖composer加载，请先运行[composer install]');
         }
 
         /**

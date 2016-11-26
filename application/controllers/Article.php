@@ -11,8 +11,9 @@ class ArticleController extends Controller
         $this->keywords('这是一个Yaf的扩展插件包');
         $this->description('这是一个Yaf的扩展插件包');
         $this->assign('value', 'Yaf Plugs ArticleController');
+        $this->css('css/layout.css');
 
-        $this->static();
+//        $this->static();
 
     }
 }
