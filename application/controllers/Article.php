@@ -16,4 +16,19 @@ class ArticleController extends Controller
 //        $this->static();
 
     }
+
+
+    public function viewAction()
+    {
+
+        $this->title('YafPlugs');
+        $this->keywords('这是一个Yaf的扩展插件包');
+        $this->description('这是一个Yaf的扩展插件包');
+        $this->assign('value', 'View Articles');
+        $this->css('css/layout.css');
+
+
+    }
+
+
 }
