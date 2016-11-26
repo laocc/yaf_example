@@ -1,0 +1,5 @@
+*.db
+/.idea/
+vendor
+composer.lock
+*/*/cache

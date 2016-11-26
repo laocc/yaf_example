@@ -1,0 +1,27 @@
+{
+      "name": "laocc/yaf_example",
+      "description": "yaf plugs演示程序",
+      "version": "v1.0.1",
+      "require": {
+            "php": ">7.0.0",
+            "ext-yaf": ">3.0",
+            "laocc/yaf": "dev-master",
+            "laocc/dbs": "dev-master",
+            "laocc/gds": "dev-master",
+            "smarty/smarty": "~3.1"
+      },
+      "authors": [
+            {
+                  "name": "LaoCC",
+                  "email": "fazo@qq.com"
+            }
+      ],
+      "keywords": [
+            "yaf plugins"
+      ],
+      "support": {
+            "source": "https://github.com/laocc/yaf_example"
+      },
+      "type": "library",
+      "license": "LGPL"
+}
