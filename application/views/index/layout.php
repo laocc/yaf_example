@@ -21,8 +21,8 @@
 </head>
 <body>
 <?= $_js_body ?>
+<h1>这是layout</h1>
 <?= $_view_html ?>
-<?php echo __FILE__;?>
 </body>
 <?= $_js_footer ?>
 <?= $_js_defer ?>

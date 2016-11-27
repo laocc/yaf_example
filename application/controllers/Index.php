@@ -1,16 +1,20 @@
 <?php
 use laocc\yaf\Controller;
+use laocc\plugs\Debug;
+use Yaf\Controller_Abstract;
 
 class IndexController extends Controller
 {
     public function indexAction()
     {
-        $this->title('Yaf Demo');
-        $this->keywords('Yaf Demo');
-        $this->description('Yaf Demo');
-        $this->css('css/layout.css');
+        Debug::init();
 
-        $this->assign('value', 'Yaf Plugs');
+//        $this->title('Yaf Demo');
+//        $this->keywords('Yaf Demo');
+//        $this->description('Yaf Demo');
+        $this->css('css/layout.css');
+//
+        $this->getView()->assign('value', 'Yaf Plugs');
 
         $arr = [];
         $arr['cto']['name'] = '老船长';
@@ -23,12 +27,15 @@ class IndexController extends Controller
         $arr['cfo'][] = ['sex' => '男'];
         $arr['cfo'][] = ['age' => '35'];
         $arr['cfo'][]['tel'] = '18801230789';
+        Debug::recode($arr);
 
 //
 //        $this->xml('value', $arr);
-        $this->json($arr);
+//        $this->json($arr);
 //        $this->html();
 //        $this->text($arr);
+
+//        Debug::stop();
 
     }
 }
