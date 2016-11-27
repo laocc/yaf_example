@@ -4,7 +4,7 @@
       "require": {
             "php": ">7.0",
             "ext-yaf": ">3.0",
-            "laocc/yaf": ">1.0.1",
+            "laocc/yaf": "dev-master",
             "laocc/dbs": ">1.0.1",
             "smarty/smarty": "~3.1"
       },

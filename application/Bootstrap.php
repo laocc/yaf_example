@@ -1,21 +1,20 @@
 <?php
 
-use \Yaf\Dispatcher;
-use \Yaf\Config\Ini;
-
-use \laocc\yaf\Router;
-use \laocc\yaf\View;
-use \laocc\yaf\Cache;
+use Yaf\Dispatcher;
+use Yaf\Config\Ini;
+use laocc\yaf\Router;
+use laocc\yaf\View;
+use laocc\yaf\Cache;
+use laocc\yaf\Mistake;
 
 class Bootstrap extends \Yaf\Bootstrap_Abstract
 {
 
-    /**
-     * 注册路由插件
-     * @param Dispatcher $dispatcher
-     */
     public function _initRoutes(Dispatcher $dispatcher)
     {
+        /**
+         * _ROOT：指向程序根目录
+         */
         $conf = new Ini(_ROOT . 'config/plugs.ini');
 
         if (!\Yaf\Loader::import(_ROOT . 'vendor/autoload.php')) {
@@ -33,6 +32,16 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract
 
         $dispatcher->registerPlugin(new View($dispatcher, $conf['view'], $cache));
 
+
+        /**
+         * 出错时的回调，一般用于发送管理信息，发短信或发邮件等
+         * @param array $str 关于错误信息的一个数组
+         */
+        $callback = function ($array) {
+            //print_r($array);
+        };
+
+        $dispatcher->registerPlugin(new Mistake($dispatcher, $conf['error'], $callback));
 
     }
 
