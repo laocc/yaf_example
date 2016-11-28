@@ -10,7 +10,7 @@ use laocc\yaf\Mistake;
 class Bootstrap extends \Yaf\Bootstrap_Abstract
 {
 
-    public function _initRoutes(Dispatcher $dispatcher)
+    public function _initPlugs(Dispatcher $dispatcher)
     {
         /**
          * _ROOT：指向程序根目录
@@ -31,10 +31,13 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract
          */
         $redis = ['host' => '127.0.0.1', 'port' => 6379, 'db=2'];
 
+        //开启缓存模块
         $cache = new Cache($dispatcher, $conf['cache'], $conf['static'], $redis);
 
+        //注册路由插件
         $dispatcher->registerPlugin(new Router($dispatcher, $conf['route'], $cache));
 
+        //注册视图插件
         $dispatcher->registerPlugin(new View($dispatcher, $conf['view'], $cache));
 
 
