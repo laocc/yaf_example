@@ -10,7 +10,7 @@ class ArticleController extends Controller
         $this->title('YafPlugs');
         $this->keywords('这是一个Yaf的扩展插件包');
         $this->description('这是一个Yaf的扩展插件包');
-        $this->assign('value', 'Yaf Plugs ArticleController');
+        $this->assign('value', 'ArticleController');
         $this->css('css/layout.css');
 
 //        $this->static();
@@ -28,6 +28,43 @@ class ArticleController extends Controller
         $this->css('css/layout.css');
 
 
+    }
+
+
+    public function xmlAction()
+    {
+        $arr = [];
+        $arr['_encoding'] = 'gb2312';
+        $arr['_css'] = '/css/xml.css';
+        $arr['cto']['name'] = '老船长';
+        $arr['cto']['time'] = '2016-1-1';
+        $arr['cto'][] = ['sex' => 'man'];
+        $arr['cto'][] = ['age' => '40'];
+        $arr['cto'][]['tel'] = '18801230456';
+        $arr['cfo']['name'] = 'kebi';
+        $arr['cfo']['time'] = '2016-2-1';
+        $arr['cfo'][] = ['sex' => 'm'];
+        $arr['cfo'][] = ['age' => '35'];
+        $arr['cfo'][]['tel'] = '18801230789';
+        $this->xml('root', $arr, true);
+        $this->charset('gb2312');
+    }
+
+
+    public function jsonAction()
+    {
+        $arr = [];
+        $arr['cto']['name'] = '老船长';
+        $arr['cto']['time'] = '2016-1-1';
+        $arr['cto'][] = ['sex' => 'man'];
+        $arr['cto'][] = ['age' => '40'];
+        $arr['cto'][]['tel'] = '18801230456';
+        $arr['cfo']['name'] = 'kebi';
+        $arr['cfo']['time'] = '2016-2-1';
+        $arr['cfo'][] = ['sex' => 'm'];
+        $arr['cfo'][] = ['age' => '35'];
+        $arr['cfo'][]['tel'] = '18801230789';
+        $this->json($arr, true);
     }
 
 

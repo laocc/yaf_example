@@ -21,6 +21,11 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract
             exit('本程序依赖composer加载，请先运行[composer install]');
         }
 
+        new Mistake($dispatcher, $conf['error'], function ($array) {
+            //出错时的回调，一般用于发送管理信息，发短信或发邮件等
+            //print_r($array);
+        });
+
         /**
          * 如果使用redis/memcache，则需要指定连接信息，这些可以在plugs.ini中指定，也可以在这里另行设置
          */
@@ -32,16 +37,6 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract
 
         $dispatcher->registerPlugin(new View($dispatcher, $conf['view'], $cache));
 
-
-        /**
-         * 出错时的回调，一般用于发送管理信息，发短信或发邮件等
-         * @param array $str 关于错误信息的一个数组
-         */
-        $callback = function ($array) {
-            //print_r($array);
-        };
-
-        $dispatcher->registerPlugin(new Mistake($dispatcher, $conf['error'], $callback));
 
     }
 

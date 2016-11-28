@@ -20,9 +20,9 @@
     <title><?= $_title ?></title>
 </head>
 <body>
+<?php include 'nav.php'; ?>
 <?= $_js_body ?>
 <?= $_view_html ?>
-<?php echo __FILE__;?>
 </body>
 <?= $_js_footer ?>
 <?= $_js_defer ?>
