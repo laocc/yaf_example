@@ -1,0 +1,19 @@
+xml {
+    display: block;
+    background:#def;
+}
+
+cto {
+    display: block;
+    font-size: 110%;
+    color: red
+}
+
+cfo {
+    display: block;
+    text-indent: 2em
+}
+
+tel {
+    color: red;
+}

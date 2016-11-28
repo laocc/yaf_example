@@ -4,7 +4,7 @@
       "require": {
             "php": ">7.0",
             "ext-yaf": ">3.0",
-            "laocc/yaf": ">=1.0.3",
+            "laocc/yaf": ">1.0.3",
             "laocc/dbs": ">1.0.1",
             "smarty/smarty": "~3.1"
       },
@@ -17,9 +17,6 @@
       "keywords": [
             "yaf plugins"
       ],
-      "support": {
-            "source": "https://github.com/laocc/yaf_example"
-      },
       "type": "library",
       "license": "LGPL"
 }
