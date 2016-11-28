@@ -29,6 +29,8 @@ class IndexController extends Controller
         $arr['cfo'][]['tel'] = '18801230789';
         Debug::recode($arr);
 
+//        throw new \Error(404);
+
 //
 //        $this->xml('value', $arr);
 //        $this->json($arr);
