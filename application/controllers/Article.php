@@ -17,6 +17,22 @@ class ArticleController extends Controller
 
     }
 
+    public function yarAction()
+    {
+        $url = 'http://yaf.kaibuy.top/user/';
+
+        $this->info();
+
+        $client = new \laocc\plugs\Async($url);
+        $client->token = 'myToken';
+        $client->timeout = 10;
+
+        $val = $client->test(time(), 123);
+        var_dump($val);
+        $this->text($val);
+
+    }
+
 
     public function viewAction()
     {
